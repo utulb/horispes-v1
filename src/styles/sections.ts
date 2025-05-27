@@ -5,7 +5,7 @@ export const sectionStyles = {
   },
   content: {
     hero: 'max-w-3xl mx-auto text-center', // Centered content for Hero
-    services: 'grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 items-center', // Original Services grid layout
+    services: 'grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32', // Removed items-center
     membership: {
       header: 'text-center mb-16 sm:mb-24', // Centered header for Membership
       grid: 'grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 max-w-5xl mx-auto', // Centered grid for Membership cards
@@ -27,7 +27,7 @@ export const sectionStyles = {
   },
   navigation: {
     base: 'absolute top-0 left-0 right-0 z-50 bg-transparent',
-    container: 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center',
+    container: 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-center items-center md:justify-between',
     logo: 'font-serif text-xl sm:text-2xl tracking-[0.2em]',
     links: 'hidden md:flex gap-8 lg:gap-16',
     link: 'text-white/70 hover:text-[#C6A45C] transition-all duration-300 text-sm tracking-[0.2em] uppercase',
@@ -43,5 +43,8 @@ export const sectionStyles = {
     link: 'text-white/60 hover:text-[#C6A45C] transition-all duration-300 text-sm tracking-[0.2em] uppercase',
     copyright: 'text-center text-white/60 text-sm tracking-[0.2em]',
     contactInfo: 'text-white/60 text-sm tracking-[0.1em]',
+  },
+  button: {
+    primary: 'bg-[#C6A45C] text-[#0A0A0A] px-8 sm:px-12 py-4 sm:py-5 rounded-none font-sans text-sm tracking-[0.2em] uppercase hover:bg-[#D4B87C] transition-all duration-300',
   },
 } as const;

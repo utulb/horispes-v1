@@ -12,15 +12,31 @@ export default function Home() {
       {/* Navigation */}
       <nav className={styles.navigation.base}>
         <div className={styles.navigation.container}>
-          <h1 className={styles.navigation.logo}>HORISPES</h1>
-          <div className={styles.navigation.links}>
-            <a href="#services" className={styles.navigation.link}>Services</a>
-            <a href="#membership" className={styles.navigation.link}>Membership</a>
-            <a href="#contact" className={styles.navigation.link}>Contact</a>
+          {/* Left Section: Links */}
+          <div className="hidden md:grid w-1/3 flex justify-center items-center">
+            <div className={styles.navigation.links}>
+              <a href="#services" className={styles.navigation.link}>Services</a>
+              <a href="#membership" className={styles.navigation.link}>Membership</a>
+              <a href="#contact" className={styles.navigation.link}>Contact</a>
+            </div>
           </div>
-          <button className={styles.navigation.button}>
-            Apply Now
-          </button>
+
+          {/* Middle Section: Logo */}
+          <div className="flex justify-center items-center">
+            <Image
+              src="/images/horispes-yuvarlak-trans.png"
+              alt="HORISPES Logo"
+              width={150}
+              height={40}
+            />
+          </div>
+
+          {/* Right Section: Button */}
+          <div className="hidden md:grid w-1/3 flex justify-center items-center">
+            <button className={styles.navigation.button}>
+              Apply Now
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -87,7 +103,8 @@ export default function Home() {
                   <span className="text-lg transform group-hover:translate-x-2 transition-transform duration-300">→</span>
                 </button>
               </div>
-              <div className="grid grid-cols-2 gap-4 sm:gap-10">
+              {/* Hide this div on mobile, show as grid on md+ */}
+              <div className="hidden md:grid grid-cols-2 gap-4 sm:gap-10">
                 {[{"title": "Travel", "icon": "✈️"}, {"title": "Events", "icon": "🎭"}, {"title": "Dining", "icon": "🍽️"}, {"title": "Lifestyle", "icon": "👔"}].map((service, index) => (
                   <motion.div 
                     key={index}
