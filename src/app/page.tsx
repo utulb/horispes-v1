@@ -44,8 +44,8 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-9xl mb-6 sm:mb-8 leading-[1.1] tracking-tight">
-                  The Most Exclusive Concierge Club
+                <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 sm:mb-8 leading-[1.1] tracking-tight">
+                  Luxury Concierge Beyond Expectation
                 </h1>
               </motion.div>
               <motion.div
@@ -54,7 +54,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <p className="font-sans text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 text-white/80 leading-relaxed">
-                  Luxury travel and lifestyle agent, elite concierge service, dedicated extension of your personal office – there are several ways to describe HORISPES, but one word our members often use might explain it best of all.
+                  Discover unparalleled luxury travel and lifestyle management<span className="text-base">.</span>
                 </p>
               </motion.div>
               <motion.div
@@ -66,9 +66,6 @@ export default function Home() {
                 <button className="bg-[#C6A45C] text-[#0A0A0A] px-8 sm:px-12 py-4 sm:py-5 rounded-none font-sans text-sm tracking-[0.2em] uppercase hover:bg-[#D4B87C] transition-all duration-300">
                   Apply for Membership
                 </button>
-                <button className="border border-[#C6A45C] text-[#C6A45C] px-8 sm:px-12 py-4 sm:py-5 rounded-none font-sans text-sm tracking-[0.2em] uppercase hover:bg-[#C6A45C]/10 transition-all duration-300">
-                  Learn More
-                </button>
               </motion.div>
             </div>
           </div>
@@ -76,7 +73,7 @@ export default function Home() {
       </FullSection>
 
       {/* Services Section */}
-      <FullSection id="services" hasPadding={true}>
+      <PartialSection id="services" hasPadding={true}>
         <div className={styles.container.base}>
           <div className="flex items-center justify-center h-full w-full">
             <div className={styles.content.services}>
@@ -107,104 +104,69 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </FullSection>
+      </PartialSection>
 
       {/* Image Block 1 */}
-      <PartialSection isImage={true}>
+      <FullSection isImage={true}>
         <div className={styles.image.container}>
           <Image
-            src="/images/divider-1.jpg"
+            src="/images/balloon.jpg"
             alt="Luxury Experience"
             fill
             className="object-cover"
           />
           <div className={styles.image.overlay}></div>
         </div>
-      </PartialSection>
+      </FullSection>
 
       {/* Membership Section */}
-      <FullSection id="membership">
-        <div className={styles.container.base}>
+      <PartialSection id="contact" hasPadding={true}>
+        <div className={styles.container.narrow}>
           <div className="flex items-center justify-center h-full w-full">
-            <div className={styles.content.membership.header}>
-              <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl mb-6 sm:mb-10 leading-tight tracking-tight">Exclusive for Good Reason</h2>
-              <p className="text-white/80 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-                We strictly limit our membership to ensure we can deliver on our promises, big and small. Each member and their family is matched perfectly with their own personal manager.
-              </p>
-            </div>
-            <div className={styles.content.membership.grid}>
-              <motion.div 
+            <div className={styles.content.contact}>
+              <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className={styles.card.base}
+                className="font-serif text-4xl sm:text-5xl md:text-6xl mb-6 sm:mb-10 leading-tight tracking-tight"
               >
-                <h3 className={styles.card.title}>Individual</h3>
-                <p className={styles.card.description}>Personalized luxury lifestyle management for discerning individuals.</p>
-                <ul className={styles.card.list}>
-                  <li className={styles.card.listItem}>
-                    <span className={styles.card.bullet}>•</span>
-                    Dedicated Lifestyle Manager
-                  </li>
-                  <li className={styles.card.listItem}>
-                    <span className={styles.card.bullet}>•</span>
-                    24/7 Concierge Service
-                  </li>
-                  <li className={styles.card.listItem}>
-                    <span className={styles.card.bullet}>•</span>
-                    Exclusive Event Access
-                  </li>
-                </ul>
-                <button className={styles.card.button}>
-                  Apply Now
-                </button>
-              </motion.div>
-              <motion.div 
+                Exclusive for Good Reason
+              </motion.h2>
+              <motion.p 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className={styles.card.base}
+                className="text-white/80 text-base sm:text-lg mb-12 sm:mb-16 leading-relaxed"
               >
-                <h3 className={styles.card.title}>Corporate</h3>
-                <p className={styles.card.description}>Elite services for discerning businesses and their executives.</p>
-                <ul className={styles.card.list}>
-                  <li className={styles.card.listItem}>
-                    <span className={styles.card.bullet}>•</span>
-                    Team Management
-                  </li>
-                  <li className={styles.card.listItem}>
-                    <span className={styles.card.bullet}>•</span>
-                    Business Travel Support
-                  </li>
-                  <li className={styles.card.listItem}>
-                    <span className={styles.card.bullet}>•</span>
-                    Corporate Entertainment
-                  </li>
-                </ul>
-                <button className={styles.card.button}>
-                  Apply Now
-                </button>
-              </motion.div>
+                We strictly limit our membership to ensure we can deliver on our promises, big and small. Each member and their family is matched perfectly with their own personal manager.
+              </motion.p>
+              <motion.button 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="bg-[#C6A45C] text-[#0A0A0A] px-12 sm:px-16 py-4 sm:py-5 rounded-none font-sans text-sm tracking-[0.2em] uppercase hover:bg-[#D4B87C] transition-all duration-300">
+                Apply for Membership
+              </motion.button>
             </div>
           </div>
         </div>
-      </FullSection>
+      </PartialSection>
 
       {/* Image Block 2 */}
-      <PartialSection isImage={true}>
+      <FullSection isImage={true}>
         <div className={styles.image.container}>
           <Image
-            src="/images/divider-2.jpg"
+            src="/images/valley.jpg"
             alt="Luxury Experience"
             fill
             className="object-cover"
           />
           <div className={styles.image.overlay}></div>
         </div>
-      </PartialSection>
+      </FullSection>
 
       {/* Contact Section */}
-      <FullSection id="contact" hasPadding={true}>
+      <PartialSection id="contact" hasPadding={true}>
         <div className={styles.container.narrow}>
           <div className="flex items-center justify-center h-full w-full">
             <div className={styles.content.contact}>
@@ -234,7 +196,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </FullSection>
+      </PartialSection>
 
       {/* Footer */}
       <footer className={styles.footer.base}>
@@ -258,7 +220,6 @@ export default function Home() {
               <ul className={styles.footer.list}>
                 <li><a href="#" className={styles.footer.link}>About</a></li>
                 <li><a href="#" className={styles.footer.link}>Contact</a></li>
-                <li><a href="#" className={styles.footer.link}>Careers</a></li>
               </ul>
             </div>
             <div>
@@ -270,7 +231,7 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.footer.copyright}>
-            © 2024 HORISPES. All rights reserved.
+            © 2025 HORISPES. All rights reserved.
           </div>
         </div>
       </footer>

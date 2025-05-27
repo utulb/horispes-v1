@@ -9,6 +9,7 @@ interface FullSectionProps {
   hasPadding?: boolean;
   isDark?: boolean;
   isCentered?: boolean;
+  isImage?: boolean;
 }
 
 export default function FullSection({ 
@@ -17,7 +18,8 @@ export default function FullSection({
   id,
   hasPadding = false,
   isDark = true,
-  isCentered = true
+  isCentered = true,
+  isImage = true
 }: FullSectionProps) {
   return (
     <section 
@@ -28,6 +30,7 @@ export default function FullSection({
         ${isCentered ? 'items-center justify-center' : 'items-start justify-start'}
         ${isDark ? 'bg-[#0A0A0A]' : 'bg-transparent'}
         ${hasPadding ? 'py-20' : ''}
+        ${isImage ? 'relative' : ''}
         ${className}
       `}
     >
