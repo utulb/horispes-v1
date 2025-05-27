@@ -34,7 +34,7 @@ export default function Home() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/95 to-[#0A0A0A]/60 z-10" />
         <div className="relative z-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full py-20 sm:py-32 md:py-0 md:mx-0">
-          <div className="max-w-2xl text-center md:text-left md:mx-0">
+          <div className="max-w-2xl text-center md:text-left md:mx-0 md:flex-grow md:flex-shrink-0 md:max-w-none">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
