@@ -120,7 +120,7 @@ export default function Home() {
       </FullSection>
 
       {/* Membership Section */}
-      <PartialSection id="contact" hasPadding={true}>
+      <PartialSection id="membership" hasPadding={true}>
         <div className={styles.container.narrow}>
           <div className="flex items-center justify-center h-full w-full">
             <div className={styles.content.contact}>
@@ -198,40 +198,63 @@ export default function Home() {
         </div>
       </PartialSection>
 
+      {/* Image Block 3 */}
+      <FullSection isImage={true}>
+        <div className={styles.image.container}>
+          <Image
+            src="/images/balloon.jpg"
+            alt="Luxury Experience"
+            fill
+            className="object-cover"
+          />
+          <div className={styles.image.overlay}></div>
+        </div>
+      </FullSection>
+
       {/* Footer */}
       <footer className={styles.footer.base}>
         <div className={styles.footer.container}>
-          <div className={styles.footer.grid}>
-            <div>
-              <h3 className={styles.footer.title}>HORISPES</h3>
-              <p className="text-white/60">Premium Experiences</p>
-            </div>
-            <div>
-              <h4 className={styles.footer.subtitle}>Services</h4>
-              <ul className={styles.footer.list}>
-                <li><a href="#" className={styles.footer.link}>Travel</a></li>
-                <li><a href="#" className={styles.footer.link}>Events</a></li>
-                <li><a href="#" className={styles.footer.link}>Dining</a></li>
-                <li><a href="#" className={styles.footer.link}>Lifestyle</a></li>
+          {/* Centered content block */}
+          <div className="flex flex-col items-center text-center space-y-6">
+            <h3 className={styles.footer.title}>HORISPES</h3>
+            {/* Optional: Keep a simplified set of main links centered */}
+            {/* <div className="flex gap-4 sm:gap-8 justify-center text-white/60 text-sm tracking-[0.2em]">
+              <a href="#services" className={styles.footer.link}>Services</a>
+              <a href="#membership" className={styles.footer.link}>Membership</a>
+              <a href="#contact" className={styles.footer.link}>Contact</a>
+            </div> */}
+            {/* Combined Legal Links and Contact Info into one structured block */}
+            <div className="text-white/60 text-sm tracking-[0.1em] flex flex-col items-center space-y-4">
+              {/* Legal Links */}
+              <ul className="list-none p-0 m-0 text-center space-y-2">
+                <li><a href="#" className={`${styles.footer.link} font-bold`}>Privacy Statement</a></li>
+                <li><a href="#" className={`${styles.footer.link} font-bold`}>Terms & Conditions</a></li>
+              </ul>
+
+              {/* Separator Line 1 */}
+              <div className="border-t border-white/10 w-16 sm:w-24 my-4"></div> {/* Adjusted width for a shorter line */}
+
+              {/* Tel Info */}
+              <ul className="list-none p-0 m-0 text-center space-y-2">
+                <li><span className="font-bold">Tel</span></li>
+                <li>TR +90 (532) 333 4444</li>
+                <li>UK +44 (1) 123 1234 123</li>
+                <li>US +1 (123) 123 1234</li>
+              </ul>
+
+              {/* Separator Line 2 */}
+              <div className="border-t border-white/10 w-16 sm:w-24 my-4"></div> {/* Adjusted width for a shorter line */}
+
+              {/* Email Info */}
+              <ul className="list-none p-0 m-0 text-center space-y-2">
+                <li><span className="font-bold">Email</span></li>
+                <li>membership@horispes.com</li>
               </ul>
             </div>
-            <div>
-              <h4 className={styles.footer.subtitle}>Company</h4>
-              <ul className={styles.footer.list}>
-                <li><a href="#" className={styles.footer.link}>About</a></li>
-                <li><a href="#" className={styles.footer.link}>Contact</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className={styles.footer.subtitle}>Legal</h4>
-              <ul className={styles.footer.list}>
-                <li><a href="#" className={styles.footer.link}>Privacy Policy</a></li>
-                <li><a href="#" className={styles.footer.link}>Terms of Service</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className={styles.footer.copyright}>
-            © 2025 HORISPES. All rights reserved.
+
+            {/* Copyright */}
+            <div className="border-t border-white/10 w-16 sm:w-24 my-4"></div>
+            <p className={styles.footer.copyright}>© 2025 HORISPES. All rights reserved.</p>
           </div>
         </div>
       </footer>

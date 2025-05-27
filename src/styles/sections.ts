@@ -41,6 +41,7 @@ export const sectionStyles = {
     subtitle: 'font-serif text-base sm:text-lg mb-6 sm:mb-8 tracking-[0.2em]',
     list: 'space-y-2 sm:space-y-4',
     link: 'text-white/60 hover:text-[#C6A45C] transition-all duration-300 text-sm tracking-[0.2em] uppercase',
-    copyright: 'mt-12 sm:mt-20 pt-8 border-t border-white/10 text-center text-white/60 text-sm tracking-[0.2em]',
+    copyright: 'text-center text-white/60 text-sm tracking-[0.2em]',
+    contactInfo: 'text-white/60 text-sm tracking-[0.1em]',
   },
 } as const;
