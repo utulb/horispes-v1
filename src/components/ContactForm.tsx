@@ -17,15 +17,46 @@ export default function ContactForm({ isOpen, onClose }: ContactFormProps) {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    console.log('Form submitted:', formData);
-    setIsSubmitting(false);
-    onClose();
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setSubmitStatus('success');
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+      
+      // Close form after 2 seconds
+      setTimeout(() => {
+        onClose();
+        setSubmitStatus('idle');
+      }, 2000);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -133,6 +164,18 @@ export default function ContactForm({ isOpen, onClose }: ContactFormProps) {
                   className="w-full bg-white/5 border border-white/10 px-4 py-3 text-white placeholder-white/30 focus:border-[#C6A45C] focus:ring-1 focus:ring-[#C6A45C] outline-none transition-all duration-300 resize-none"
                 />
               </div>
+
+              {submitStatus === 'error' && (
+                <div className="text-red-500 text-sm">
+                  Failed to send message. Please try again.
+                </div>
+              )}
+
+              {submitStatus === 'success' && (
+                <div className="text-green-500 text-sm">
+                  Thank you! Your application has been submitted successfully.
+                </div>
+              )}
 
               <motion.button
                 type="submit"
