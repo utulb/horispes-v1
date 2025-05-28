@@ -77,7 +77,7 @@ export default function ContactForm({ isOpen, onClose }: ContactFormProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[51]"
           />
           
           {/* Modal */}
@@ -86,10 +86,11 @@ export default function ContactForm({ isOpen, onClose }: ContactFormProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 50, scale: 0.95 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-[#0A0A0A] border border-white/10 p-8 sm:p-10 z-50"
+            className="fixed inset-x-4 top-1/2 -translate-y-1/2 w-auto max-w-md mx-auto bg-[#0A0A0A] border border-white/10 p-6 sm:p-10 z-[51] max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex justify-between items-center mb-8">
-              <h2 className="font-serif text-2xl sm:text-3xl tracking-tight">Begin Your Journey</h2>
+            <div className="flex justify-between items-center mb-6 sm:mb-8">
+              <h2 className="font-serif text-xl sm:text-3xl tracking-tight">Begin Your Journey</h2>
               <button
                 onClick={onClose}
                 className="text-white/60 hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full"
@@ -101,7 +102,7 @@ export default function ContactForm({ isOpen, onClose }: ContactFormProps) {
               </button>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div className="space-y-1">
                 <label htmlFor="name" className="block text-sm text-white/80 font-medium tracking-wide">
                   Full Name
@@ -114,7 +115,7 @@ export default function ContactForm({ isOpen, onClose }: ContactFormProps) {
                   onChange={handleChange}
                   required
                   placeholder="Enter your full name"
-                  className="w-full bg-white/5 border border-white/10 px-4 py-3 text-white placeholder-white/30 focus:border-[#C6A45C] focus:ring-1 focus:ring-[#C6A45C] outline-none transition-all duration-300"
+                  className="w-full bg-white/5 border border-white/10 px-4 py-3 text-white placeholder-white/30 focus:border-[#C6A45C] focus:ring-1 focus-within:ring-1 focus:ring-[#C6A45C] outline-none transition-all duration-300 text-base"
                 />
               </div>
 
@@ -130,7 +131,7 @@ export default function ContactForm({ isOpen, onClose }: ContactFormProps) {
                   onChange={handleChange}
                   required
                   placeholder="Enter your email address"
-                  className="w-full bg-white/5 border border-white/10 px-4 py-3 text-white placeholder-white/30 focus:border-[#C6A45C] focus:ring-1 focus:ring-[#C6A45C] outline-none transition-all duration-300"
+                  className="w-full bg-white/5 border border-white/10 px-4 py-3 text-white placeholder-white/30 focus:border-[#C6A45C] focus:ring-1 focus-within:ring-1 focus:ring-[#C6A45C] outline-none transition-all duration-300 text-base"
                 />
               </div>
 
@@ -145,7 +146,7 @@ export default function ContactForm({ isOpen, onClose }: ContactFormProps) {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="Enter your phone number"
-                  className="w-full bg-white/5 border border-white/10 px-4 py-3 text-white placeholder-white/30 focus:border-[#C6A45C] focus:ring-1 focus:ring-[#C6A45C] outline-none transition-all duration-300"
+                  className="w-full bg-white/5 border border-white/10 px-4 py-3 text-white placeholder-white/30 focus:border-[#C6A45C] focus:ring-1 focus-within:ring-1 focus:ring-[#C6A45C] outline-none transition-all duration-300 text-base"
                 />
               </div>
 
@@ -161,7 +162,7 @@ export default function ContactForm({ isOpen, onClose }: ContactFormProps) {
                   required
                   placeholder="Tell us about your interests and requirements"
                   rows={4}
-                  className="w-full bg-white/5 border border-white/10 px-4 py-3 text-white placeholder-white/30 focus:border-[#C6A45C] focus:ring-1 focus:ring-[#C6A45C] outline-none transition-all duration-300 resize-none"
+                  className="w-full bg-white/5 border border-white/10 px-4 py-3 text-white placeholder-white/30 focus:border-[#C6A45C] focus:ring-1 focus-within:ring-1 focus:ring-[#C6A45C] outline-none transition-all duration-300 resize-none text-base"
                 />
               </div>
 
