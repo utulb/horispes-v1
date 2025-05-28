@@ -2,13 +2,22 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import FullSection from "@/components/FullSection";
 import PartialSection from "@/components/PartialSection";
+import ContactForm from "@/components/ContactForm";
 import { sectionStyles as styles } from "@/styles/sections";
 
 export default function Home() {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+
+  const openContactForm = () => setIsContactFormOpen(true);
+  const closeContactForm = () => setIsContactFormOpen(false);
+
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-white overflow-hidden">
+      <ContactForm isOpen={isContactFormOpen} onClose={closeContactForm} />
+      
       {/* Navigation */}
       <nav className={styles.navigation.base}>
         <div className={styles.navigation.container}>
@@ -33,7 +42,7 @@ export default function Home() {
 
           {/* Right Section: Button */}
           <div className="hidden md:grid w-1/3 flex justify-center items-center">
-            <button className={styles.navigation.button}>
+            <button onClick={openContactForm} className={styles.navigation.button}>
               Apply Now
             </button>
           </div>
@@ -79,7 +88,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center"
               >
-                <button className="bg-[#C6A45C] text-[#0A0A0A] px-8 sm:px-12 py-4 sm:py-5 rounded-none font-sans text-sm tracking-[0.2em] uppercase hover:bg-[#D4B87C] transition-all duration-300">
+                <button onClick={openContactForm} className="bg-[#C6A45C] text-[#0A0A0A] px-8 sm:px-12 py-4 sm:py-5 rounded-none font-sans text-sm tracking-[0.2em] uppercase hover:bg-[#D4B87C] transition-all duration-300">
                   Apply for Membership
                 </button>
               </motion.div>
@@ -98,7 +107,7 @@ export default function Home() {
                 <p className="text-white/80 text-base sm:text-lg mb-8 sm:mb-12 leading-relaxed">
                   Your own hyper-connected fixer-of-fabulous, we develop a deep understanding of your needs in both the short and long term, on hand wherever in the world you may be.
                 </p>
-                <button className="text-[#C6A45C] hover:text-[#D4B87C] transition-all duration-300 flex items-center gap-4 text-sm tracking-[0.2em] uppercase group">
+                <button onClick={openContactForm} className="text-[#C6A45C] hover:text-[#D4B87C] transition-all duration-300 flex items-center gap-4 text-sm tracking-[0.2em] uppercase group">
                   Explore Services
                   <span className="text-lg transform group-hover:translate-x-2 transition-transform duration-300">→</span>
                 </button>
@@ -158,6 +167,7 @@ export default function Home() {
                 We strictly limit our membership to ensure we can deliver on our promises, big and small. Each member and their family is matched perfectly with their own personal manager.
               </motion.p>
               <motion.button 
+                onClick={openContactForm}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
@@ -204,6 +214,7 @@ export default function Home() {
                 Members of HORISPES are hand-picked and consist of those who have a zeal for the best things in life and the multifaceted opportunities it offers. Membership is awarded on a selective basis.
               </motion.p>
               <motion.button 
+                onClick={openContactForm}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
@@ -234,12 +245,6 @@ export default function Home() {
           {/* Centered content block */}
           <div className="flex flex-col items-center text-center space-y-6">
             <h3 className={styles.footer.title}>HORISPES</h3>
-            {/* Optional: Keep a simplified set of main links centered */}
-            {/* <div className="flex gap-4 sm:gap-8 justify-center text-white/60 text-sm tracking-[0.2em]">
-              <a href="#services" className={styles.footer.link}>Services</a>
-              <a href="#membership" className={styles.footer.link}>Membership</a>
-              <a href="#contact" className={styles.footer.link}>Contact</a>
-            </div> */}
             {/* Combined Legal Links and Contact Info into one structured block */}
             <div className="text-white/60 text-sm tracking-[0.1em] flex flex-col items-center space-y-4">
               {/* Legal Links */}
