@@ -18,6 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="google-site-verification" content="VqDjHSD5Dsh6TKeQYN_PM4sHbCvDNlOJR1d-j8jY8DA" />
+      </head>
       <body
         className={`${montserrat.variable} ${playfair.variable} bg-primary-dark text-primary-light antialiased`}
         style={{ isolation: 'isolate' }}
